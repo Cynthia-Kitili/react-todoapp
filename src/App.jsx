@@ -1,9 +1,10 @@
+import Todo from "./components/Todo"
 
 function App() {
 
   return (
     <>
-      App
+      <Todo/>
     </>
   )
 }
