@@ -1,11 +1,12 @@
 import { useState } from "react";
+import TodoItem from "./TodoItem";
 
 export default function Todo() {
     const [todo, setTodo] = useState("")
     const [todos, setTodos] = useState([])
-    function handleSubmit(e){
+    function handleSubmit(e) {
         e.preventDefault(); // prevents default submission & refresh
-        setTodos([...todos,todo]); // takes all current todos using spread opaerator then adds new todo to the array
+        setTodos([...todos, todo]); // takes all current todos using spread operator then adds new todo to the array
         setTodo("")
     }
     return (
@@ -14,7 +15,9 @@ export default function Todo() {
                 <input onChange={(e) => setTodo(e.target.value)} value={todo} type="text" />
                 <button type="submit">Add</button>
             </form>
-            {console.log(todos)}
+            {todos.map((item) => (
+                <TodoItem key={item} item={item}/>
+            ))}
         </div>
     );
 }
