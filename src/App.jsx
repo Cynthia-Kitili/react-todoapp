@@ -1,14 +1,13 @@
-import InlineComponent from "./components/InlineComponent"
-import Outline from "./components/Outline"
+import Header from "./components/Header"
 import Todo from "./components/Todo"
+import "./App.css"
 
 function App() {
 
   return (
     <>
-      {/* <Todo/> */}
-      <InlineComponent/>
-      <Outline/>
+      <Header />
+      <Todo />
     </>
   )
 }
